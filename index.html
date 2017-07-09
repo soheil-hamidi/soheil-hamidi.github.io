@@ -34,30 +34,32 @@
       </div>
     </div>
     <div id="third">
-      <i class="fa fa-angle-down fa-lg fa-4x change animated infinite fadeInDown"></i>
+      <i id="down-arrow" class="fa fa-angle-down fa-lg fa-4x change animated infinite fadeInDown"></i>
     </div>
   </div>
   <div id="custom_navbar">
     <div class="container">
       <div class="row">
         <div class="col-xs-9">
-          <img id="avatar" class="img-circle colorChange" src="./img/soheil.png">
+          <div id="avatar-col">
+            <img id="avatar" class="img-circle colorChange" src="./img/soheil.png">
+          </div>
         </div>
         <div id="about-col" class="col-xs-3 text-right">
-          <a id="about" href="#first" class="smoothScroll">About</a>
+          <p id="about" class="smoothScroll">About</p>
         </div>
       </div>
     </div>
   </div>
   <div id="main">
     <div class="container-fluid">
-      <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+      <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="20000">
         <div class="controls">
           <ul class="nav">
-            <li data-target="#custom_carousel" data-slide-to="0" class="active"><a href="#"><img class="img-circle place-logo" src="./img/logos/north60.png"><p>North60</p></a></li>
-            <li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img class="img-circle place-logo grayscale-filter" src="./img/logos/ruhacks.png"><p>RU Hacks</p></a></li>
-            <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img class="img-circle place-logo grayscale-filter" src="./img/logos/qhacks.png"><p>QHacks</p></a></li>
-            <li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img class="img-circle place-logo grayscale-filter" src="./img/logos/finhacks.png"><p>Finhacks</p></a></li>
+            <li data-target="#custom_carousel" data-slide-to="0" class="active"><div class="activities"><img class="img-circle place-logo" src="./img/logos/north60.png"><p>North60</p></div></li>
+            <li data-target="#custom_carousel" data-slide-to="1"><div class="activities"><img class="img-circle place-logo grayscale-filter" src="./img/logos/ruhacks.png"><p>RU Hacks</p></div></li>
+            <li data-target="#custom_carousel" data-slide-to="2"><div class="activities"><img class="img-circle place-logo grayscale-filter" src="./img/logos/qhacks.png"><p>QHacks</p></div></li>
+            <li data-target="#custom_carousel" data-slide-to="3"><div class="activities"><img class="img-circle place-logo grayscale-filter" src="./img/logos/finhacks.png"><p>Finhacks</p></div></li>
           </ul>
         </div>
         <hr>
