@@ -4,11 +4,16 @@ $(document).ready(function(ev) {
     $('#custom_carousel .controls li:eq(' + $(evt.relatedTarget).index() + ')').addClass('active');
     $('#custom_carousel .controls img').addClass('grayscale-filter');
     $('#custom_carousel .controls img:eq(' + $(evt.relatedTarget).index() + ')').removeClass('grayscale-filter');
-  })
+  });
 });
 
 $('.ball').click(function() {
-  $('#' + this.id).animateCss('bounce');
+  $(this).animateCss('bounce');
+  var color = $(this).css('backgroundColor');
+  $('#avatar-main').removeClass('colorChange');
+  $('#my-name').removeClass('textColorChange');
+  $('#avatar-main').css('backgroundColor',color);
+  $('#my-name').css('color',color);
 });
 
 $('.places').click(function() {
@@ -16,14 +21,17 @@ $('.places').click(function() {
   $('.places').removeClass('places_active');
   $(element_id).addClass('places_active');
   if (element_id === '#hackathons') {
+    $('.activities:eq(0)').click();
     $('.controls').addClass('hide');
     $('#hackathon-controls').removeClass('hide');
     $('#hackathon-controls').animateCss('fadeIn');
-  } else if (element_id === '#work-experiences') {
+  } else if (element_id === '#work-experience') {
+    $('.activities:eq(4)').click();
     $('.controls').addClass('hide');
     $('#work-controls').removeClass('hide');
     $('#work-controls').animateCss('fadeIn');
   } else if (element_id === '#projects') {
+    $('.activities:eq(8)').click();
     $('.controls').addClass('hide');
     $('#projects-controls').removeClass('hide');
     $('#projects-controls').animateCss('fadeIn');
@@ -31,7 +39,7 @@ $('.places').click(function() {
 });
 
 $('#third').click(async function() {
-  $('#avatar-col,#about,#experiences,#custom_carousel').addClass('hide');
+  $('#avatar-col,#about,#experience,#custom_carousel').addClass('hide');
 
   $('#first').addClass('animated slideOutUp');
   $('#bio-text').addClass('animated fadeOut');
@@ -43,36 +51,39 @@ $('#third').click(async function() {
   $('html,body').animate({
       scrollTop: $('#custom_navbar').offset().top
     },
-    1000);
+    500);
 
-  await sleep(1000);
+  await sleep(500);
 
   $('#first').removeClass('animated slideOutUp');
   $('#bio-text').removeClass('animated fadeOut');
   $('.fa-angle-down').addClass('infinite fadeInDown');
   $('.fa-angle-down').removeClass('fadeOutDown');
 
-  $('#avatar-col,#about,#experiences,#custom_carousel').removeClass('hide');
+  $('#avatar-col,#about,#experience,#custom_carousel').removeClass('hide');
 
   $('#avatar-col').addClass('animated flipInY');
   $('#about').addClass('animated fadeIn');
-  $('#experiences').addClass('animated flipInX');
+  $('#experience').addClass('animated flipInX');
   $('#custom_carousel').addClass('animated fadeIn');
 
-  await sleep(1000);
+  await sleep(500);
 
   $('#avatar-col').removeClass('animated flipInY');
   $('#about').removeClass('animated fadeIn');
-  $('#experiences').removeClass('animated flipInX');
+  $('#experience').removeClass('animated flipInX');
   $('#custom_carousel').removeClass('animated fadeIn');
 });
 
 $('#about').click(async function() {
+  $('#avatar-main').addClass('colorChange');
+  $('#my-name').addClass('textColorChange');
+  
   $('#first,#bio-text,.fa-angle-down').addClass('hide');
 
   $('#avatar-col').addClass('animated flipOutY');
   $('#about').addClass('animated fadeOut');
-  $('#experiences').addClass('animated flipOutX');
+  $('#experience').addClass('animated flipOutX');
   $('#custom_carousel').addClass('animated fadeOut');
 
   await sleep(1000);
@@ -86,7 +97,7 @@ $('#about').click(async function() {
 
   $('#avatar-col').removeClass('animated flipOutY');
   $('#about').removeClass('animated fadeOut');
-  $('#experiences').removeClass('animated flipOutX');
+  $('#experience').removeClass('animated flipOutX');
   $('#custom_carousel').removeClass('animated fadeOut');
 
   $('#first,#bio-text,.fa-angle-down').removeClass('hide');

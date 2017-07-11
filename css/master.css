@@ -126,7 +126,7 @@ body {
 }
 
 .container .text-muted {
-  margin: 15px 0;
+  margin: 16px 0;
 }
 
 #custom_navbar {
@@ -165,12 +165,12 @@ body {
   line-height: 45px;
 }
 
-#experiences .row {
+#experience .row {
   margin-left: 1px;
   margin-right: 1px;
 }
 
-#experiences .col-xs-4 {
+#experience .col-xs-4 {
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -202,17 +202,13 @@ body {
   background-color: white;
 }
 
-#experiences-hr {
-  border-color: #BDBDBD;
-  padding-top: 0px;
-  margin-top: 0px;
-}
-
 .custom_hr {
   border-color: #BDBDBD;
 }
 
 .activities {
+  margin-top: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 
@@ -262,6 +258,12 @@ body {
 
 #custom_carousel a:hover {
   background-color: transparent;
+}
+
+#custom_carousel .active .activities img {
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(158, 158, 158, 1);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(158, 158, 158, 1);
+  box-shadow: 0px 0px 16px 0px rgba(158, 158, 158, 1);
 }
 
 .place-logo {
@@ -383,6 +385,9 @@ body {
     padding-left: 50px;
     padding-right: 50px;
   }
+  #experience p {
+    font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -397,6 +402,9 @@ body {
   }
   body {
     font-size: 12px;
+  }
+  #experience p {
+    font-size: 10px;
   }
 }
 
@@ -418,4 +426,21 @@ body {
     opacity: 0;
     transform: translate3d(0, 200%, 0);
   }
+}
+
+.connect {
+  margin-top: 11px;
+  display: flex;
+}
+
+.connect a {
+  cursor: pointer;
+}
+
+.fixed {
+  width: 36px;
+}
+
+.flex-item {
+  flex-grow: 1;
 }
