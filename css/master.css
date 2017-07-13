@@ -5,6 +5,18 @@ body {
   background-color: #FAFAFA;
 }
 
+.places-img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+}
+
+.youtube {
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+}
+
 #circles {
   position: absolute;
   margin-top: 26vh;
