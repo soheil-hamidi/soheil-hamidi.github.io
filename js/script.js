@@ -73,32 +73,32 @@ $('#third').click(async function() {
   $('#about').removeClass('animated fadeIn');
   $('#experience').removeClass('animated flipInX');
   $('#custom_carousel').removeClass('animated fadeIn');
+
+  $('#second').addClass('hide');
 });
 
 $('#about').click(async function() {
   $('#avatar-main').addClass('colorChange');
   $('#my-name').addClass('textColorChange');
-  
+
   $('#first,#bio-text,.fa-angle-down').addClass('hide');
 
   $('#avatar-col').addClass('animated flipOutY');
   $('#about').addClass('animated fadeOut');
   $('#experience').addClass('animated flipOutX');
   $('#custom_carousel').addClass('animated fadeOut');
+  $('#custom_navbar').addClass('animated slideOutUp');
 
   await sleep(1000);
-
-  $('html,body').animate({
-      scrollTop: $('#first').offset().top
-    },
-    1000);
-
+  $('#second').removeClass('hide');
+  $('#second').addClass('animated slideInDown');
   await sleep(1000);
 
   $('#avatar-col').removeClass('animated flipOutY');
   $('#about').removeClass('animated fadeOut');
   $('#experience').removeClass('animated flipOutX');
   $('#custom_carousel').removeClass('animated fadeOut');
+  $('#custom_navbar').removeClass('animated slideOutUp');
 
   $('#first,#bio-text,.fa-angle-down').removeClass('hide');
 
@@ -110,6 +110,7 @@ $('#about').click(async function() {
 
   $('#first').removeClass('animated slideInDown');
   $('#bio-text').removeClass('animated fadeIn');
+  $('#second').removeClass('animated slideInDown');
 });
 
 function sleep(ms) {
