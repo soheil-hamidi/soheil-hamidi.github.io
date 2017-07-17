@@ -28,7 +28,7 @@ body {
   border-radius: 50%;
   width: 3vh;
   height: 3vh;
-  background: #E53935;
+  background: #DB3236;
   border: 1px solid #FFFFFF;
   cursor: pointer;
 }
@@ -39,7 +39,7 @@ body {
   border-radius: 50%;
   width: 3vh;
   height: 3vh;
-  background: #64DD17;
+  background: #3CBA54;
   border: 1px solid #FFFFFF;
   cursor: pointer;
 }
@@ -50,7 +50,7 @@ body {
   border-radius: 50%;
   width: 3vh;
   height: 3vh;
-  background: #0091EA;
+  background: #0277BD;
   border: 1px solid #FFFFFF;
   cursor: pointer;
 }
@@ -61,7 +61,7 @@ body {
   border-radius: 50%;
   width: 3vh;
   height: 3vh;
-  background: #FFBB00;
+  background: #FFAB00;
   border: 1px solid #FFFFFF;
   cursor: pointer;
 }
@@ -74,7 +74,7 @@ body {
 
 #avatar-main {
   position: relative;
-  background-color: #E53935;
+  background-color: #DB3236;
   width: 20vh;
   height: 20vh;
   margin-top: 18vh;
@@ -154,7 +154,7 @@ body {
 }
 
 #avatar {
-  background-color: #E53935;
+  background-color: #DB3236;
   width: 40px;
   height: 40px;
   border: 2px solid #FFFFFF;
@@ -229,8 +229,17 @@ body {
 }
 
 .medal {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+.tech {
+  height: 80px;
+  width: 80px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #9E9E9E;
 }
 
 #custom_carousel {
@@ -281,11 +290,6 @@ body {
   border: 2px solid #BDBDBD;
 }
 
-#custom_carousel .item .img-circle {
-  margin-right: 8px;
-  border: 1px solid #9E9E9E;
-}
-
 /*#custom_carousel .active .activities img {
   -webkit-box-shadow: 0px 0px 0px 3px #D50000;
   -moz-box-shadow: 0px 0px 0px 3px #D50000;
@@ -309,61 +313,61 @@ body {
 
 @-webkit-keyframes text {
   0% {
-    color: #E53935;
+    color: #DB3236;
   }
   33% {
-    color: #64DD17;
+    color: #3CBA54;
   }
   67% {
-    color: #0091EA;
+    color: #0277BD;
   }
   100% {
-    color: #FFBB00;
+    color: #FFAB00;
   }
 }
 
 @keyframes text {
   0% {
-    color: #E53935;
+    color: #DB3236;
   }
   33% {
-    color: #64DD17;
+    color: #3CBA54;
   }
   67% {
-    color: #0091EA;
+    color: #0277BD;
   }
   100% {
-    color: #FFBB00;
+    color: #FFAB00;
   }
 }
 
 @-webkit-keyframes bg {
   0% {
-    background-color: #E53935;
+    background-color: #DB3236;
   }
   33% {
-    background-color: #64DD17;
+    background-color: #3CBA54;
   }
   67% {
-    background-color: #0091EA;
+    background-color: #0277BD;
   }
   100% {
-    background-color: #FFBB00;
+    background-color: #FFAB00;
   }
 }
 
 @keyframes bg {
   0% {
-    background-color: #E53935;
+    background-color: #DB3236;
   }
   33% {
-    background-color: #64DD17;
+    background-color: #3CBA54;
   }
   67% {
-    background-color: #0091EA;
+    background-color: #0277BD;
   }
   100% {
-    background-color: #FFBB00;
+    background-color: #FFAB00;
   }
 }
 
@@ -419,6 +423,13 @@ body {
 @media screen and (min-width: 992px) {
   .content {
     padding-right: 60px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .footer {
+    padding-top: 3px;
+    font-size: 15px;
   }
 }
 

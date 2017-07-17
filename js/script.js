@@ -7,13 +7,17 @@ $(document).ready(function(ev) {
   });
 });
 
+$(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip({container: 'body'});
+});
+
 $('.ball').click(function() {
   $(this).animateCss('bounce');
   var color = $(this).css('backgroundColor');
   $('#avatar-main').removeClass('colorChange');
   $('#my-name').removeClass('textColorChange');
-  $('#avatar-main').css('backgroundColor',color);
-  $('#my-name').css('color',color);
+  $('#avatar-main').css('backgroundColor', color);
+  $('#my-name').css('color', color);
 });
 
 $('.places').click(function() {
