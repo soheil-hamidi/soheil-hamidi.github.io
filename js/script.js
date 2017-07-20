@@ -8,7 +8,7 @@ $(document).ready(function(ev) {
 });
 
 $(document).ready(function() {
-  $('[data-toggle="tooltip"]').tooltip({container: 'body'});
+  $('[data-toggle="tooltip"]').tooltip();
 });
 
 $('.ball').click(function() {

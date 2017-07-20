@@ -485,3 +485,7 @@ body {
 .flex-item {
   flex-grow: 1;
 }
+
+.tooltip-container {
+  float: left;
+}
