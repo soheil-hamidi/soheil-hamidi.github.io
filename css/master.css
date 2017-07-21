@@ -234,10 +234,9 @@ body {
 }
 
 .tech {
-  height: 80px;
-  width: 80px;
-  margin-right: 5px;
-  margin-left: 5px;
+  height: 60px;
+  width: 60px;
+  margin-right: 15px;
   margin-bottom: 15px;
   border: 1px solid #9E9E9E;
 }
