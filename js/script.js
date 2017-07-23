@@ -52,6 +52,8 @@ $('#third').click(async function() {
 
   await sleep(1000);
 
+  $('#main-content').removeClass('hide');
+
   $('html,body').animate({
       scrollTop: $('#custom_navbar').offset().top
     },
@@ -97,6 +99,7 @@ $('#about').click(async function() {
   $('#second').removeClass('hide');
   $('#second').addClass('animated slideInDown');
   await sleep(1000);
+  $('#main-content').addClass('hide');
 
   $('#avatar-col').removeClass('animated flipOutY');
   $('#about').removeClass('animated fadeOut');
