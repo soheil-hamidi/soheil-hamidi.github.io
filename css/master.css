@@ -30,8 +30,6 @@ small {
   float: left;
   margin-left: 2vh;
   border-radius: 50%;
-  width: 3vh;
-  height: 3vh;
   background: #C62828;
   border: 1px solid #FFFFFF;
   cursor: pointer;
@@ -41,8 +39,6 @@ small {
   float: left;
   margin-left: 6px;
   border-radius: 50%;
-  width: 3vh;
-  height: 3vh;
   background: #3CBA54;
   border: 1px solid #FFFFFF;
   cursor: pointer;
@@ -52,8 +48,6 @@ small {
   float: left;
   margin-left: 6px;
   border-radius: 50%;
-  width: 3vh;
-  height: 3vh;
   background: #0099CC;
   border: 1px solid #FFFFFF;
   cursor: pointer;
@@ -63,8 +57,6 @@ small {
   float: left;
   margin-left: 6px;
   border-radius: 50%;
-  width: 3vh;
-  height: 3vh;
   background: #FFAB00;
   border: 1px solid #FFFFFF;
   cursor: pointer;
@@ -241,7 +233,7 @@ small {
   height: 40px;
   width: 40px;
   margin-right: 6px;
-  margin-bottom: 6px;
+  margin-top: 10px;
   border: 1px solid #9E9E9E;
 }
 
@@ -292,6 +284,7 @@ small {
 #custom_carousel .controls .img-circle {
   border: 2px solid #BDBDBD;
 }
+
 
 /*#custom_carousel .active .activities img {
   -webkit-box-shadow: 0px 0px 0px 3px #D50000;
@@ -387,6 +380,23 @@ small {
 .carousel-inner .img-responsive {
   margin: 0 auto;
   padding: 15px;
+}
+
+.ball {
+  width: 3vh;
+  height: 3vh;
+}
+
+.tech-used {
+  cursor: pointer;
+  color: #43A047;
+  font-size: 16px;
+}
+
+.tech-used:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #43A047;
 }
 
 @media screen and (min-width: 601px) and (max-width: 991px) {
