@@ -229,11 +229,16 @@ small {
   height: 30px;
 }
 
-.tech {
+.tooltip-container {
   height: 40px;
   width: 40px;
   margin-right: 6px;
   margin-top: 10px;
+}
+
+.tech {
+  height: inherit;
+  width: inherit;
   border: 1px solid #9E9E9E;
 }
 

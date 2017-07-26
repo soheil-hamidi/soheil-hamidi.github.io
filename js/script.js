@@ -1,6 +1,6 @@
 $(document).ready(function(ev) {
   $('#custom_carousel').on('slide.bs.carousel', function(evt) {
-    $('.collapse').collapse('hide')
+    $('.tooltip-container').children().addClass('hide');
     $('#custom_carousel .controls li.active').removeClass('active');
     $('#custom_carousel .controls li:eq(' + $(evt.relatedTarget).index() + ')').addClass('active');
     $('#custom_carousel .controls img').addClass('grayscale-filter');
@@ -8,21 +8,28 @@ $(document).ready(function(ev) {
   });
 });
 
-$('.collapse').on('show.bs.collapse', async function(element) {
-  var tech = $(element.currentTarget).children()
-  tech.addClass('hide');
-  await sleep(100);
-  for (i = 0; i < tech.length; i++) {
-    $(tech[i]).removeClass('hide');
-    $(tech[i]).addClass('animated fadeIn');
-    await sleep(100);
-  }
-  console.log();
-});
-
 $(document).ready(function() {
   $('[data-toggle="tooltip"]').tooltip();
+  $('.tooltip-container').children().addClass('hide');
 });
+
+$('.tech-used').on('click', techAnimation);
+
+async function techAnimation(event) {
+  $(this).off('click')
+  var target_id = $(event.currentTarget).data("target");
+  var tech = $(target_id).children().children();
+  for (i = 0; i < tech.length; i++) {
+    if ($(tech[i]).hasClass('hide')) {
+      $(tech[i]).animateCssShow('fadeIn');
+    }
+    else {
+      $(tech[i]).animateCssHide('fadeOut');
+    }
+    await sleep(50);
+  }
+  $(this).on('click', techAnimation)
+}
 
 $('.ball').click(function() {
   $(this).animateCss('bounce');
@@ -34,7 +41,7 @@ $('.ball').click(function() {
 });
 
 $('.places').click(function() {
-  $('.collapse').collapse('hide')
+  $('.tooltip-container').children().addClass('hide');
   var element_id = '#' + this.id;
   $('.places').removeClass('places_active');
   $(element_id).addClass('places_active');
@@ -141,6 +148,26 @@ function sleep(ms) {
 $.fn.extend({
   animateCss: function(animationName) {
     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    this.addClass('animated ' + animationName).one(animationEnd, function() {
+      $(this).removeClass('animated ' + animationName);
+    });
+  }
+});
+
+$.fn.extend({
+  animateCssHide: function(animationName) {
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    this.addClass('animated ' + animationName).one(animationEnd, function() {
+      $(this).addClass('hide');
+      $(this).removeClass('animated ' + animationName);
+    });
+  }
+});
+
+$.fn.extend({
+  animateCssShow: function(animationName) {
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    $(this).removeClass('hide');
     this.addClass('animated ' + animationName).one(animationEnd, function() {
       $(this).removeClass('animated ' + animationName);
     });
