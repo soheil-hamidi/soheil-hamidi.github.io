@@ -1,8 +1,35 @@
 $('.carousel').bcSwipe({ threshold: 50 });
 
+function getPlacesId(index) {
+  return "#" + $('#experience .row .places')[index].id
+}
+
+function checkLocation(index) {
+  if (index < 4 && $('#hackathon-controls').hasClass('hide')) {
+    $('.places').removeClass('places_active');
+    $(getPlacesId(0)).addClass('places_active');
+    $('.controls').addClass('hide');
+    $('#hackathon-controls').removeClass('hide');
+    $('#hackathon-controls').animateCss('fadeIn');
+  } else if (index < 8 && index > 3 && $('#work-controls').hasClass('hide')) {
+    $('.places').removeClass('places_active');
+    $(getPlacesId(1)).addClass('places_active');
+    $('.controls').addClass('hide');
+    $('#work-controls').removeClass('hide');
+    $('#work-controls').animateCss('fadeIn');
+  } else if (index > 7 && $('#projects-controls').hasClass('hide')) {
+    $('.places').removeClass('places_active');
+    $(getPlacesId(2)).addClass('places_active');
+    $('.controls').addClass('hide');
+    $('#projects-controls').removeClass('hide');
+    $('#projects-controls').animateCss('fadeIn');
+  }
+}
+
 $(document).ready(function(ev) {
   $('#custom_carousel').on('slide.bs.carousel', function(evt) {
     $('.tooltip-container').children().addClass('hide');
+    checkLocation($(evt.relatedTarget).index());
     $('#custom_carousel .controls li.active').removeClass('active');
     $('#custom_carousel .controls li:eq(' + $(evt.relatedTarget).index() + ')').addClass('active');
     $('#custom_carousel .controls img').addClass('grayscale-filter');
@@ -45,23 +72,12 @@ $('.ball').click(function() {
 $('.places').click(function() {
   $('.tooltip-container').children().addClass('hide');
   var element_id = '#' + this.id;
-  $('.places').removeClass('places_active');
-  $(element_id).addClass('places_active');
   if (element_id === '#hackathons') {
     $('.activities:eq(0)').click();
-    $('.controls').addClass('hide');
-    $('#hackathon-controls').removeClass('hide');
-    $('#hackathon-controls').animateCss('fadeIn');
   } else if (element_id === '#work-experience') {
     $('.activities:eq(4)').click();
-    $('.controls').addClass('hide');
-    $('#work-controls').removeClass('hide');
-    $('#work-controls').animateCss('fadeIn');
   } else if (element_id === '#projects') {
     $('.activities:eq(8)').click();
-    $('.controls').addClass('hide');
-    $('#projects-controls').removeClass('hide');
-    $('#projects-controls').animateCss('fadeIn');
   }
 });
 
