@@ -1,3 +1,5 @@
+$('.carousel').bcSwipe({ threshold: 50 });
+
 $(document).ready(function(ev) {
   $('#custom_carousel').on('slide.bs.carousel', function(evt) {
     $('.tooltip-container').children().addClass('hide');
