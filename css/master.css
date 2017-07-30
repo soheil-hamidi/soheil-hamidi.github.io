@@ -145,7 +145,6 @@ small {
 }
 
 #custom_navbar .container {
-  width: 80%;
   padding-top: 8px;
 }
 
@@ -289,13 +288,6 @@ small {
 #custom_carousel .controls .img-circle {
   border: 2px solid #BDBDBD;
 }
-
-
-/*#custom_carousel .active .activities img {
-  -webkit-box-shadow: 0px 0px 0px 3px #D50000;
-  -moz-box-shadow: 0px 0px 0px 3px #D50000;
-  box-shadow: 0px 0px 0px 3px #D50000;
-}*/
 
 .place-logo {
   width: 200px;

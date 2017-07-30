@@ -55,6 +55,7 @@ $(document).ready(function() {
     $('#my-name').removeClass('textColorChange');
     $('#avatar-main').css('backgroundColor', color);
     $('#my-name').css('color', color);
+    ga('send', 'event', 'Balls', 'clicked', 'Ball color: ' + this.id.split('-')[1]);
   });
 
   $('#custom_carousel').on('slide.bs.carousel', function(evt) {
@@ -89,8 +90,9 @@ $(document).ready(function() {
     $('html,body').animate({
         scrollTop: $('#custom_navbar').offset().top
       },
-      500);
-    await sleep(500);
+      1000);
+    ga('send', 'event', 'Visits', 'clicked', 'Main Content');
+    await sleep(1000);
     $('#first').removeClass('animated slideOutUp');
     $('#bio-text').removeClass('animated fadeOut');
     $('.fa-angle-down').addClass('infinite fadeInDown');
@@ -100,7 +102,7 @@ $(document).ready(function() {
     $('#about').addClass('animated fadeIn');
     $('#experience').addClass('animated flipInX');
     $('#custom_carousel').addClass('animated fadeIn');
-    await sleep(500);
+    await sleep(1000);
     $('#avatar-col').removeClass('animated flipInY');
     $('#about').removeClass('animated fadeIn');
     $('#experience').removeClass('animated flipInX');
@@ -120,6 +122,7 @@ $(document).ready(function() {
     await sleep(1000);
     $('#second').removeClass('hide');
     $('#second').addClass('animated slideInDown');
+    ga('send', 'event', 'Visits', 'clicked', 'About');
     await sleep(1000);
     $('#main-content').addClass('hide');
     $('#avatar-col').removeClass('animated flipOutY');
