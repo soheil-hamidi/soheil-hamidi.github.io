@@ -45,7 +45,7 @@ $(document).ready(function() {
   $('[data-toggle="tooltip"]').tooltip();
 
   $('.carousel').bcSwipe({
-    threshold: 100
+    threshold: 70
   });
 
   $('.ball').click(function() {
@@ -55,7 +55,7 @@ $(document).ready(function() {
     $('#my-name').removeClass('textColorChange');
     $('#avatar-main').css('backgroundColor', color);
     $('#my-name').css('color', color);
-    ga('send', 'event', 'Balls', 'clicked', 'Ball color: ' + this.id.split('-')[1]);
+    ga('send', 'event', this.id.split('-')[1] + ' Ball', 'clicked', 'Balls');
   });
 
   $('#custom_carousel').on('slide.bs.carousel', function(evt) {
@@ -91,7 +91,7 @@ $(document).ready(function() {
         scrollTop: $('#custom_navbar').offset().top
       },
       1000);
-    ga('send', 'event', 'Visits', 'clicked', 'Main Content');
+    ga('send', 'event', 'Main Content Visits', 'clicked', 'Main Content');
     await sleep(1000);
     $('#first').removeClass('animated slideOutUp');
     $('#bio-text').removeClass('animated fadeOut');
@@ -122,7 +122,7 @@ $(document).ready(function() {
     await sleep(1000);
     $('#second').removeClass('hide');
     $('#second').addClass('animated slideInDown');
-    ga('send', 'event', 'Visits', 'clicked', 'About');
+    ga('send', 'event', 'About Visits', 'clicked', 'About');
     await sleep(1000);
     $('#main-content').addClass('hide');
     $('#avatar-col').removeClass('animated flipOutY');
