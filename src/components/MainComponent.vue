@@ -547,7 +547,7 @@ const closeItemView = () => {
                     mr-0.5
                     ml-1.5
                     text-gray-400
-                    hover:text-gray-600
+                    hover:text-gray-700
                   "
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="7.025 7.025 497.951 497.95"
@@ -570,7 +570,7 @@ const closeItemView = () => {
                     w-5
                     inline-block
                     text-gray-400
-                    hover:text-gray-600
+                    hover:text-gray-700
                     mb-1.5
                     mr-0.5
                     ml-1.5
