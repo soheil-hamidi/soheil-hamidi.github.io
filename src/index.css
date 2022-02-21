@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .snap {
+    scroll-snap-type: var(--scroll-snap-direction) var(--scroll-snap-constraint);
+  }
+  .snap-y {
+    --scroll-snap-direction: y;
+  }
+  .snap-mandatory {
+    --scroll-snap-constraint: mandatory;
+  }
+  .snap-start {
+    scroll-snap-align: start;
+  }
+}
+
+:root {
+  --popper-theme-background-color: black;
+  --popper-theme-background-color-hover: black;
+  --popper-theme-text-color: white;
+  --popper-theme-border-radius: 6px;
+  --popper-theme-padding: 10px;
+}

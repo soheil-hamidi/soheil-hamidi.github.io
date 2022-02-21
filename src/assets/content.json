@@ -1,0 +1,762 @@
+{
+  "version": "1589844021",
+  "bio": "I’m <span class='text-blue-500'>Soheil</span>, a Software Engineer focused on Web Applications. <br><br> I’m all about geeky stuff! In my spare time, I try to learn new things, code and play video games.",
+  "logo": "./img/soheil.png",
+  "experiences": {
+    "firstSection": [
+      {
+        "id": "QHacks",
+        "technologies": [
+          "watson",
+          "twilio",
+          "slack",
+          "autocode",
+          "firebase",
+          "raspberry",
+          "git"
+        ],
+        "logo": "qhacks",
+        "title": "QHacks",
+        "show": true,
+        "date": {
+          "from": "February 2018"
+        },
+        "descriptions": [
+          "Garbage in bins around cities is constantly overflowing. Our goal was to create a system that better allocates time and resources to help prevent this problem, while also positively impacting the environment.",
+          "<br>\n<h2 class='text-xl font-bold'>What does it do?<h2>",
+          "It provides a live monitoring web application that displays the live capacity of both garbage and recycling compartments using **Ultrasonic sensors**. The bin uses a cell phone camera to send an image to the custom learning model built with **IBM Watson**. The results from the Watson model are used to classify each object placed in the bin so that it can be sorted into either garbage or recycling. Based on the classification, the Android application controls the platform using a servo motor to tilt the platform and drop the item into its correct bin. Once a garbage/recycling bin nears full capacity, **Autocode** API is used to notify city workers via **SMS** that bins at a given address are full.<br><br>",
+          "**Machine learning** is applied when an object cannot be classified. When this happens, the image of the object is sent via **Autocode** APIs to **Slack**. Along with the image, response buttons are displayed in Slack, which allows a city worker to manually classify the item. Once a selection is made, the new classification is used to further train the Watson model. This updated model is then used by all the connected smart garbage bins, allowing for all the bins to learn.<br><br>",
+          "I worked on **IBM Watson**, **Slack** integration to train the **ML models**, and **Autocode** APIs."
+        ],
+        "memory": {
+          "video": "mt9LvMxUfQI"
+        }
+      },
+      {
+        "id": "HackWestern",
+        "technologies": [
+          "python",
+          "javascript",
+          "html",
+          "css",
+          "firebase",
+          "raspberry",
+          "git"
+        ],
+        "logo": "western",
+        "title": "Hack Western",
+        "show": true,
+        "date": {
+          "from": "November 2017"
+        },
+        "descriptions": [
+          "Inspired by the current shift we are seeing in the automotive and delivery industries. Driverless cars are slowly but surely entering space, and we thought driverless delivery vehicles would be a very interesting topic for our project. While drones are set to deliver packages in the near future, heavier packages would be much more fit for a ground base vehicle.",
+          "<br>\n<h2 class='text-xl font-bold'>What does it do?<h2>",
+          "The journey begins on the web application. To sign up, a user submits webcam photos of themselves for authentication when their package arrives. They then select a product from the shop and wait for its arrival. This alerts the car that delivery is ready to begin. The car proceeds to travel to the address of the customer. Upon arrival, the car will text the customer to notify them that their package has arrived. The customer must then come to the bot, and look into the camera on its front. If the face of the customer matches the face saved to the purchasing account, the car notifies the customer and opens the safe.",
+          "<br>\n<h2 class='text-xl font-bold'>How did we build it?<h2>",
+          "The project has three primary components. The physical prototype is a reconfigured **RC car** that was hacked together with a **raspberry pi** and a whole lot of motors, breadboards, and resistors. Atop this monstrosity rides the package to be delivered in a cardboard **safe**, along with a front-facing camera (in an Android smartphone) to scan the faces of customers.",
+          "<br>I worked on the hardware, **RC car**, carboard **safe** and made them all work with **Raspberry Pi** using **Python** and **Firebase**, also helped with developing the web app."
+        ],
+        "memory": {
+          "video": "yavo8pk1tgw"
+        }
+      },
+      {
+        "id": "HackAI",
+        "technologies": [
+          "python",
+          "flask",
+          "firebase",
+          "docker",
+          "nginx",
+          "digitalOcean",
+          "git"
+        ],
+        "logo": "gmhackai",
+        "title": "Hack AI",
+        "show": false,
+        "date": {
+          "from": "June 2017"
+        },
+        "descriptions": [
+          "This event was an Artificial Intelligence themed hackathon hosted by General Motors at DMZ, where we came up with the idea of making an AI assistant to find events that interest users based on their preference history. This was done by finding events on sites like Eventbrite and Meetups, as well as Facebook events being attended by friends. The software can then add the event to the user's calendar if there was no conflict. We also made an Android app to accompany the assistant.",
+          "My role as a backend developer was to set up the server. The biggest challenge came due to the fact that the Api.ai service needed a SSL certificate to be able to communicate with."
+        ],
+        "memory": {
+          "image": {
+            "name": "hackai.jpg"
+          },
+          "links": [
+            {
+              "title": "Github",
+              "url": "https://github.com/hackaAICaffeeBabesTeam/caffee"
+            }
+          ]
+        }
+      },
+      {
+        "id": "RUHacks",
+        "technologies": ["python", "firebase", "raspberry", "git"],
+        "logo": "ruhacks",
+        "title": "RU Hacks",
+        "show": true,
+        "date": {
+          "from": "March 2017"
+        },
+        "descriptions": [
+          "RU Hacks was a fun two-day hackathon where we tried to make something similar to **Amazon Go**.<br><br>",
+          "<h2 class='text-xl font-bold'>I was responsible for:</h2>",
+          "Making the hardware, shelves that detect item pickup and return by using **Light** and **Ultrasonic** sensors connected to a **raspberry pi**. **Python** was used to communicate with the server and the sensors.<br><br>",
+          "We came in first in this hackathon which made those two sleepless days worthwhile."
+        ],
+        "memory": {
+          "video": "2DYvezrnN4E"
+        }
+      },
+      {
+        "id": "QHacks",
+        "technologies": [
+          "javascript",
+          "html",
+          "css",
+          "python",
+          "flask",
+          "react",
+          "bootstrap",
+          "firebase",
+          "docker",
+          "nginx",
+          "digitalOcean",
+          "git"
+        ],
+        "logo": "qhacks",
+        "title": "QHacks",
+        "show": false,
+        "date": {
+          "from": "February 2017"
+        },
+        "descriptions": [
+          "QHacks was a Queen’s University Hackathon where we made an application to find menu items from restaurants near you that match your desired price range. I worked on the backend of the app and was responsible for making the APIs that the mobile apps use to get the data."
+        ],
+        "memory": {
+          "image": {
+            "name": "qhacks.jpg"
+          },
+          "links": [
+            {
+              "title": "Devpost",
+              "url": "https://devpost.com/software/howmuch"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Finhacks",
+        "technologies": [
+          "javascript",
+          "html",
+          "css",
+          "bootstrap",
+          "firebase",
+          "nodeRed",
+          "raspberry",
+          "git"
+        ],
+        "logo": "finhacks",
+        "title": "Finhacks",
+        "show": false,
+        "date": {
+          "from": "November 2016"
+        },
+        "descriptions": [
+          "This event was a Financial and IOT themed hackathon where we made a cylindrical device that outputs a saving goal’s progress via a series of LEDs. The device can also read back your goal progress when you tap your device on its NFC enabled top.",
+          "I was responsible for the communication between the device and phones. For that I used Node Red on Raspberry Pi for the APIs and firebase for the databases."
+        ],
+        "memory": {
+          "image": {
+            "name": "finhacks.jpg"
+          },
+          "links": [
+            {
+              "title": "Cisco Blog",
+              "url": "https://blogs.cisco.com/innovation/cisco-toronto-innovation-centre-hosts-a-weekend-of-fintech-hacking-with-td"
+            }
+          ]
+        }
+      }
+    ],
+    "secondSection": [
+      {
+        "id": "PointClickCare",
+        "technologies": [
+          "java",
+          "kotlin",
+          "html",
+          "css",
+          "javascript",
+          "spring",
+          "vue",
+          "cypress",
+          "sqlserver",
+          "rabbitmq",
+          "kafka",
+          "jenkins",
+          "helm",
+          "terraform",
+          "docker",
+          "kubernetes",
+          "istio",
+          "azure",
+          "kusto",
+          "openapi",
+          "git"
+        ],
+        "logo": "pcc",
+        "title": "PointClickCare",
+        "show": true,
+        "date": {
+          "from": "August 2018",
+          "to": "Now"
+        },
+        "descriptions": [
+          "Joined companies **incubation zone**, we were tasked to build new services to be integrated into the main **PointClickCare** application.",
+          "<br>We had the freedom and opportunity to use any technology and build the company's infrastructure for services. Our work paved the path for other teams to move to the cloud, use enhanced CI/CD, build microservices and help break down the main apps monolith architecture.",
+          "<br>I was mostly involved in building **PointClickCare Connect** and all other services around it to support integration with other Health care networks.",
+          "<br>\n<h2 class='text-xl font-bold'>My contribution:<h2>",
+          "<ul class='list-disc list-inside'><li>Worked on the PointClickCare Connect application that gave nurses access to patient data on other health care networks.</li><li>Developed a service to receive and publish patient documents.</li><li>Helped with containerizing and setting up CI/CD pipelines for services to be deployed on Kubernetes.</li><li>Wrote tests for services and UI.</li></ul>"
+        ],
+        "memory": {
+          "video": "-T4YwwxY0RI"
+        }
+      },
+      {
+        "id": "MediLab",
+        "technologies": [
+          "meteor",
+          "blaze",
+          "html",
+          "css",
+          "javascript",
+          "docker",
+          "mongodb",
+          "git"
+        ],
+        "logo": "medi",
+        "title": "Med-i Lab",
+        "show": true,
+        "date": {
+          "from": "May 2018",
+          "to": "August 2018"
+        },
+        "descriptions": [
+          "Tesseract-Medical Imaging (Tesseract-MI) is an open-source, web-based platform that enables the deployment of AI models while simultaneously providing standard image viewing and reporting schemes. The goal of Tesseract-MI is to augment 3D medical imaging and provide a 4th dimension (AI) when requested by a user.<br><br>",
+          "<h2 class='text-xl font-bold'>What is it?</h2>",
+          "A web application for identification of clinically significant prostate cancer in MRI."
+        ],
+        "memory": {
+          "image": {
+            "name": "tesseract.png"
+          },
+          "links": [
+            {
+              "title": "Live Demo!",
+              "url": "http://prostatecancer.ai/studylist"
+            },
+            {
+              "title": "Published Paper",
+              "url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10951/109511R/Tesseract-medical-imaging--open-source-browser-based-platform-for/10.1117/12.2513004.short?SSO=1"
+            }
+          ]
+        }
+      },
+      {
+        "id": "North60",
+        "technologies": [
+          "python",
+          "shell",
+          "javascript",
+          "html",
+          "css",
+          "react",
+          "flask",
+          "bootstrap",
+          "memcached",
+          "mongodb",
+          "couchbase",
+          "psql",
+          "sqla",
+          "firebase",
+          "crossbar",
+          "twilio",
+          "docker",
+          "nginx",
+          "aws",
+          "git"
+        ],
+        "logo": "north60",
+        "title": "North60",
+        "show": true,
+        "date": {
+          "from": "September 2016",
+          "to": "September 2017"
+        },
+        "descriptions": [
+          "A startup focused on healthcare.<br><br>",
+          "<h2 class='text-xl font-bold'>As a full-stack developer, I worked on two projects:<h2>",
+          "<ul class='list-disc list-inside'><li>MDnius.</li><li>Health companion app for patients.</li></ul>",
+          "<br>\n<h2 class='text-xl font-bold'>My contribution:<h2>",
+          "<ul class='list-disc list-inside'><li>A program that receives and processes prescriptions before sending them to users and pharmacies.</li><li>A login and signup process with two-factor authentication.</li><li>Notification system for both phones and websites.</li><li>Web services (APIs) for Android, iOS, and the pharmacy web app.</li></ul>"
+        ],
+        "memory": {
+          "image": {
+            "name": "mdnius.png"
+          },
+          "links": [
+            {
+              "title": "App Website",
+              "url": "https://mdnius.com/"
+            }
+          ]
+        }
+      },
+      {
+        "id": "CDS",
+        "technologies": ["html", "css", "javascript"],
+        "logo": "cds",
+        "title": "Queen's University Continuing and Distance Studies (CDS)",
+        "show": false,
+        "date": {
+          "from": "May 2016",
+          "to": "August 2016"
+        },
+        "descriptions": [
+          "I spent my summer in CDS to do the transition between two Learning Management Systems (LMS): Moodle and D2L.",
+          "As a course creator, my job was to help build new courses, as well as transfer existing courses to the new LMS.",
+          "In the process of building, we had to ensure that the user experience met the standards of the university and was accessible to everyone using the platform. I took mandatory courses on user accessibility and security while working here, in order to better implement these concepts in the new platform."
+        ],
+        "memory": {
+          "image": {
+            "name": "cds.jpg"
+          }
+        }
+      },
+      {
+        "id": "QUIC",
+        "technologies": ["java", "html", "css", "git"],
+        "logo": "quic",
+        "title": "QUIC",
+        "show": false,
+        "date": {
+          "from": "September 2014",
+          "to": "April 2016"
+        },
+        "descriptions": [
+          "I built this project for Queen’s University International Centre. It is a java program that can analyse spreadsheets containing all the international students who are receiving University Health Insurance (UHIP) at Queen’s. After the analysis, it can then return the statistics of analysed data.",
+          "The Graphical User Interface (GUI) of the program was built using HTML and CSS."
+        ],
+        "memory": {
+          "image": {
+            "name": "quic.png"
+          },
+          "links": [
+            {
+              "title": "Github",
+              "url": "https://github.com/soheil-hamidi/quic-uhip-analytics"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Trigger",
+        "technologies": ["javascript", "html", "css", "bootstrap", "git"],
+        "logo": "trigger",
+        "title": "Trigger",
+        "show": false,
+        "date": {
+          "from": "July 2014",
+          "to": "August 2014"
+        },
+        "descriptions": [
+          "Trigger, a startup born from Queen’s Innovation Centre, is a platform that connects students with successful peers to receive coaching on how to land their first professional job.",
+          "My role as a frontend developer was to build the UI/UX of the website so students and coaches can sign up, find each other and chat about their experiences."
+        ],
+        "memory": {
+          "image": {
+            "name": "trigger.jpg"
+          },
+          "links": [
+            {
+              "title": "Article",
+              "url": "https://github.com/soheil-hamidi/quic-uhip-analytics"
+            }
+          ]
+        }
+      }
+    ],
+    "thirdSection": [
+      {
+        "id": "LiveCollab",
+        "technologies": [
+          "ts",
+          "html",
+          "scss",
+          "react",
+          "bootstrap",
+          "graphql",
+          "gcp",
+          "ga",
+          "git"
+        ],
+        "logo": "live",
+        "title": "Live Collab",
+        "show": true,
+        "date": {
+          "from": "August 2020",
+          "to": "Now"
+        },
+        "descriptions": [
+          "While backlog grooming, we always have this urge to fix typos or add extra remarks to the text that our teammates are writing! This project was born as a result of that.<br><br>",
+          "<h2 class='text-xl font-bold'>What does it do?</h2>",
+          "\nIt's for scrum teams, to collaborate live while creating or updating tasks with **timer** and **estimation** widgets to help them along the way, think of it as a mini Google Docs."
+        ],
+        "memory": {
+          "video": "kH3YccI4vzo",
+          "links": [
+            {
+              "title": "Monday App Store Link",
+              "url": "https://auth.monday.com/marketplace/85"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Restaurant",
+        "technologies": [
+          "javascript",
+          "html",
+          "css",
+          "knockout",
+          "bootstrap",
+          "git"
+        ],
+        "logo": "map",
+        "title": "Restaurant Search",
+        "show": true,
+        "date": {
+          "from": "March 2017"
+        },
+        "descriptions": [
+          "This website will find all the restaurants near you when you search for a type of cuisine.",
+          "By default, it will show sushi restaurants in downtown Toronto.",
+          "When searching, the website will ask for the user's location and then shows all the search results on Google Maps.",
+          "This project was mainly made to play with different APIs and to learn how to implement Google Maps on a website."
+        ],
+        "memory": {
+          "image": {
+            "name": "restaurant.png"
+          },
+          "links": [
+            {
+              "title": "Live Demo!",
+              "url": "https://www.soheilhamidi.com/neighborhood-map/"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Blog",
+        "technologies": [
+          "javascript",
+          "html",
+          "css",
+          "python",
+          "bootstrap",
+          "gcp",
+          "git"
+        ],
+        "logo": "blog",
+        "title": "Multi User Blog",
+        "show": false,
+        "date": {
+          "from": "February 2017"
+        },
+        "descriptions": [
+          "A reddit-like multi user blog that users can create posts, leave likes and add comments.",
+          "The website has a full user registration and login system and was built using Google’s app engine and Python."
+        ],
+        "memory": {
+          "image": {
+            "name": "blog.png"
+          },
+          "links": [
+            {
+              "title": "Live Demo!",
+              "url": "https://multi-user-blog-158522.appspot.com/"
+            }
+          ]
+        }
+      },
+      {
+        "id": "GameTheory",
+        "technologies": ["javascript", "html", "css", "angular", "bootstrap"],
+        "logo": "game",
+        "title": "Game Theory",
+        "show": true,
+        "date": {
+          "from": "March 2016"
+        },
+        "descriptions": [
+          "I made this website as part of an open project for my Game Theory course.",
+          "The website has three strategy games that can be played by two users.",
+          "One of the games (Chomp) can also be played against an AI opponent that uses an algorithm to win."
+        ],
+        "memory": {
+          "image": {
+            "name": "chess.png"
+          },
+          "links": [
+            {
+              "title": "Live Demo!",
+              "url": "https://www.soheilhamidi.com/game_theory/"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Connect4",
+        "technologies": ["c"],
+        "logo": "connect4",
+        "title": "Connect 4",
+        "show": false,
+        "date": {
+          "from": "March 2015"
+        },
+        "descriptions": [
+          "A Connect 4 game written in C programing language.",
+          "In the game, users compete against the computer. Every turn,the computer or the user chooses a column to try to connect 4 letters in a row. While the AI opponent is not the most intelligent, it tries its best to check all the combinations and block the user from winning."
+        ],
+        "memory": {
+          "image": {
+            "name": "connect4.png"
+          },
+          "links": [
+            {
+              "title": "Download the game",
+              "url": "https://drive.google.com/file/d/0BxWyISVsN1W0OVpSVVdZaUdmWjQ/view"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "technologies": {
+    "c": {
+      "title": "C",
+      "imageName": "lang/c.png"
+    },
+    "java": {
+      "title": "Java",
+      "imageName": "lang/java.png"
+    },
+    "scss": {
+      "title": "Sass",
+      "imageName": "lang/scss.png"
+    },
+    "kusto": {
+      "title": "Kusto",
+      "imageName": "lang/kusto.png"
+    },
+    "kotlin": {
+      "title": "Kotlin",
+      "imageName": "lang/kotlin.png"
+    },
+    "spring": {
+      "title": "Spring Boot",
+      "imageName": "fw/spring.png"
+    },
+    "blaze": {
+      "title": "BlazeJS",
+      "imageName": "fw/blaze.png"
+    },
+    "meteor": {
+      "title": "Meteor",
+      "imageName": "fw/meteor.png"
+    },
+    "jenkins": {
+      "title": "Jenkins",
+      "imageName": "tools/jenkins.png"
+    },
+    "graphql": {
+      "title": "GraphQL",
+      "imageName": "tools/graphql.png"
+    },
+    "ga": {
+      "title": "Github Actions",
+      "imageName": "tools/ga.png"
+    },
+    "openapi": {
+      "title": "Open API",
+      "imageName": "tools/openapi.png"
+    },
+    "helm": {
+      "title": "Helm",
+      "imageName": "tools/helm.png"
+    },
+    "istio": {
+      "title": "Istio",
+      "imageName": "tools/istio.png"
+    },
+    "kubernetes": {
+      "title": "Kubernetes",
+      "imageName": "tools/kubernetes.png"
+    },
+    "rabbitmq": {
+      "title": "RabbitMQ",
+      "imageName": "tools/rabbitmq.png"
+    },
+    "terraform": {
+      "title": "Terraform",
+      "imageName": "tools/terraform.png"
+    },
+    "cypress": {
+      "title": "Cypress",
+      "imageName": "tools/cypress.png"
+    },
+    "azure": {
+      "title": "Azure",
+      "imageName": "tools/azure.png"
+    },
+    "kafka": {
+      "title": "Kafka",
+      "imageName": "tools/kafka.png"
+    },
+    "vue": {
+      "title": "Vue.js",
+      "imageName": "fw/vue.png"
+    },
+    "shell": {
+      "title": "Bash",
+      "imageName": "lang/shell.png"
+    },
+    "python": {
+      "title": "Python",
+      "imageName": "lang/python.png"
+    },
+    "javascript": {
+      "title": "Javascript",
+      "imageName": "lang/js.png"
+    },
+    "html": {
+      "title": "HTML",
+      "imageName": "lang/html.png"
+    },
+    "css": {
+      "title": "CSS",
+      "imageName": "lang/css.png"
+    },
+    "angular": {
+      "title": "Angular",
+      "imageName": "fw/angular.png"
+    },
+    "knockout": {
+      "title": "KnockoutJs",
+      "imageName": "fw/knockout.png"
+    },
+    "flask": {
+      "title": "Flask",
+      "imageName": "fw/flask.png"
+    },
+    "react": {
+      "title": "React",
+      "imageName": "fw/react.png"
+    },
+    "ts": {
+      "title": "Typescript",
+      "imageName": "lang/ts.png"
+    },
+    "bootstrap": {
+      "title": "Bootstrap",
+      "imageName": "fw/bootstrap.png"
+    },
+    "raspberry": {
+      "title": "Raspberry Pi",
+      "imageName": "tools/raspberry.png"
+    },
+    "firebase": {
+      "title": "Firebase",
+      "imageName": "tools/firebase.png"
+    },
+    "docker": {
+      "title": "Docker",
+      "imageName": "tools/docker.png"
+    },
+    "nginx": {
+      "title": "Nginx",
+      "imageName": "tools/nginx.png"
+    },
+    "digitalOcean": {
+      "title": "Digital Ocean",
+      "imageName": "tools/do.png"
+    },
+    "twilio": {
+      "title": "Twilio",
+      "imageName": "tools/twilio.png"
+    },
+    "git": {
+      "title": "Git",
+      "imageName": "tools/git.png"
+    },
+    "aws": {
+      "title": "AWS",
+      "imageName": "tools/aws.png"
+    },
+    "autocode": {
+      "title": "Autocode",
+      "imageName": "tools/autocode.png"
+    },
+    "watson": {
+      "title": "Watson",
+      "imageName": "tools/watson.png"
+    },
+    "crossbar": {
+      "title": "Crossbar",
+      "imageName": "tools/crossbar.png"
+    },
+    "gcp": {
+      "title": "Google Cloud Platform",
+      "imageName": "tools/gcp.png"
+    },
+    "sqla": {
+      "title": "SQL Alchemy",
+      "imageName": "tools/sqla.png"
+    },
+    "nodeRed": {
+      "title": "Node Red",
+      "imageName": "tools/node-red.png"
+    },
+    "slack": {
+      "title": "Slack",
+      "imageName": "tools/slack.png"
+    },
+    "couchbase": {
+      "title": "Couchbase",
+      "imageName": "db/couchbase.png"
+    },
+    "memcached": {
+      "title": "Memcached",
+      "imageName": "db/memcached.png"
+    },
+    "mongodb": {
+      "title": "MongoDB",
+      "imageName": "db/mongodb.png"
+    },
+    "psql": {
+      "title": "PostgreSQL",
+      "imageName": "db/psql.png"
+    },
+    "sqlserver": {
+      "title": "SQL Server",
+      "imageName": "db/sqlserver.png"
+    }
+  }
+}
