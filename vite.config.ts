@@ -4,7 +4,7 @@ import eslintPlugin from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'https://www.soheilhamidi.com/',
+  base: '',
   plugins: [vue(), eslintPlugin()],
   server: {
     host: true,
