@@ -5,7 +5,12 @@ module.exports = {
     fontFamily: {
       sans: ["Avenir", "Helvetica", "Arial", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        cs1: "0 0 10px 5px rgb(0 0 0 / 0.05)",
+        cs2: "0 0 10px 10px rgb(0 0 0 / 0.05)",
+      },
+    },
   },
   variants: {
     extend: {},

@@ -5,6 +5,29 @@ import Popper from "vue3-popper";
 import Markdown from "vue3-markdown-it";
 import { Content, Section } from "../types/content";
 
+const shuffle = (array: string[]) => {
+  let currentIndex = array.length,
+    randomIndex;
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+  return array;
+};
+
+const photos = shuffle([
+  "graduation.jpg",
+  "decode.jpg",
+  "hackai.jpg",
+  "quic.png",
+  "google.jpg",
+  "lake.jpg",
+]);
+
 const getImage = (path: string) => {
   return new URL(`/src/assets/${path}`, import.meta.url).href;
 };
@@ -138,44 +161,14 @@ const closeItemView = () => {
                           "
                         >
                           <img
-                            src="../assets/memory/graduation.jpg"
+                            :src="getImage(`memory/${photos[0]}`)"
                             alt=""
                             class="w-full h-full object-center object-cover"
                           />
                         </div>
                         <div class="w-44 h-64 rounded-lg overflow-hidden">
                           <img
-                            src="../assets/memory/decode.jpg"
-                            alt=""
-                            class="w-full h-full object-center object-cover"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="
-                          flex-shrink-0
-                          grid grid-cols-1
-                          gap-y-6
-                          lg:gap-y-8
-                        "
-                      >
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                          <img
-                            src="../assets/memory/hackai.jpg"
-                            alt=""
-                            class="w-full h-full object-center object-cover"
-                          />
-                        </div>
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                          <img
-                            src="../assets/memory/me.jpg"
-                            alt=""
-                            class="w-full h-full object-center object-cover"
-                          />
-                        </div>
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                          <img
-                            src="../assets/memory/quic.png"
+                            :src="getImage(`memory/${photos[1]}`)"
                             alt=""
                             class="w-full h-full object-center object-cover"
                           />
@@ -191,14 +184,44 @@ const closeItemView = () => {
                       >
                         <div class="w-44 h-64 rounded-lg overflow-hidden">
                           <img
-                            src="../assets/memory/google.jpg"
+                            :src="getImage(`memory/${photos[2]}`)"
                             alt=""
                             class="w-full h-full object-center object-cover"
                           />
                         </div>
                         <div class="w-44 h-64 rounded-lg overflow-hidden">
                           <img
-                            src="../assets/memory/lake.jpg"
+                            src="../assets/memory/me2.jpg"
+                            alt="emoji"
+                            class="w-full h-full object-center object-cover"
+                          />
+                        </div>
+                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                          <img
+                            :src="getImage(`memory/${photos[3]}`)"
+                            alt=""
+                            class="w-full h-full object-center object-cover"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="
+                          flex-shrink-0
+                          grid grid-cols-1
+                          gap-y-6
+                          lg:gap-y-8
+                        "
+                      >
+                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                          <img
+                            :src="getImage(`memory/${photos[4]}`)"
+                            alt=""
+                            class="w-full h-full object-center object-cover"
+                          />
+                        </div>
+                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                          <img
+                            :src="getImage(`memory/${photos[5]}`)"
                             alt=""
                             class="w-full h-full object-center object-cover"
                           />
@@ -278,18 +301,16 @@ const closeItemView = () => {
           >
             <div
               class="
-                h-full
                 aspect-w-3 aspect-h-2
                 rounded-lg
                 overflow-hidden
                 sm:col-span-4
                 lg:col-span-5
+                mt-1
               "
             >
               <iframe
                 v-if="selectedItem.memory.video"
-                width="560"
-                height="315"
                 :src="`https://www.youtube.com/embed/${selectedItem.memory.video}`"
                 title="YouTube video player"
                 frameborder="0"
@@ -431,7 +452,15 @@ const closeItemView = () => {
           <div class="pb-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div
-                class="max-w-2xl mx-auto py-16 sm:py-24 lg:py-32 lg:max-w-none"
+                class="
+                  max-w-2xl
+                  mx-auto
+                  pt-8
+                  sm:pt-12
+                  lg:pt-16
+                  pb-4
+                  lg:max-w-none
+                "
               >
                 <div
                   class="
@@ -453,10 +482,7 @@ const closeItemView = () => {
                     "
                     :class="animationOpacity ? ' opacity-100' : 'opacity-0'"
                   >
-                    <div
-                      class="cursor-pointer group-hover:opacity-75"
-                      @click="selectItem(data.id)"
-                    >
+                    <div class="cursor-pointer" @click="selectItem(data.id)">
                       <div
                         class="
                           relative
@@ -467,7 +493,11 @@ const closeItemView = () => {
                           overflow-hidden
                           sm:aspect-w-2 sm:aspect-h-1 sm:h-64
                           lg:aspect-w-1 lg:aspect-h-1
-                          border-2 border-gray-00
+                          transition-shadow
+                          ease-in-out
+                          duration-200
+                          shadow-cs1
+                          hover:shadow-cs2
                         "
                       >
                         <img
@@ -517,8 +547,18 @@ const closeItemView = () => {
           </div>
         </div>
         <div class="fixed bottom-0 w-screen">
-          <div class="bg-gray-50 h-16 flex items-center justify-center">
-            <p>
+          <div
+            class="
+              bg-white
+              h-14
+              flex
+              items-center
+              justify-center
+              bg-opacity-80
+              backdrop-filter backdrop-blur-sm
+            "
+          >
+            <p class="text-gray-600">
               I would
               <svg
                 xmlns="http://www.w3.org/2000/svg"
