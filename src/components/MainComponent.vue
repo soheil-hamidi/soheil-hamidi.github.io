@@ -51,7 +51,10 @@ const sections = [
 const selectedSection = ref(1);
 const animationOpacity = ref(true);
 const itemViewAnimation = ref(true);
+const imgOpacity = ref([0, 0, 0, 0, 0, 0]);
 const selectedItem = ref<Section>();
+const mainContent = ref<HTMLInputElement>();
+const isMainContentOnTop = ref(false);
 
 const getSectionData = () => {
   const sectionData: Section[] = sections[selectedSection.value].section;
@@ -89,6 +92,27 @@ const closeItemView = () => {
     selectedItem.value = undefined;
   }, 300);
 };
+
+const changeImgOpacity = () => {
+  for (let i = 0; i < 6; i++) {
+    setTimeout(() => {
+      imgOpacity.value[i] = 100;
+    }, i * 450);
+  }
+};
+changeImgOpacity();
+
+const trackMainContentLocation = () => {
+  const mainContentValue = mainContent.value;
+  if (mainContentValue) {
+    let loc = mainContentValue.getBoundingClientRect().top;
+    if (loc === 0) {
+      isMainContentOnTop.value = true;
+    } else if (loc > 0) {
+      isMainContentOnTop.value = false;
+    }
+  }
+};
 </script>
 
 <template>
@@ -100,6 +124,7 @@ const closeItemView = () => {
       overflow-y-scroll
       snap snap-y snap-mandatory
     "
+    @scroll="trackMainContentLocation"
   >
     <div class="h-screen w-screen fixed z-0">
       <div class="relative bg-white overflow-hidden h-screen">
@@ -119,7 +144,9 @@ const closeItemView = () => {
               >
                 Hey! 👋🏽
               </h1>
+              <!-- eslint-disable vue/no-v-html -->
               <p class="my-10 text-xl text-left" v-html="content.bio"></p>
+              <!--eslint-enable-->
             </div>
             <div>
               <div class="mt-10">
@@ -163,14 +190,30 @@ const closeItemView = () => {
                           <img
                             :src="getImage(`memory/${photos[0]}`)"
                             alt=""
-                            class="w-full h-full object-center object-cover"
+                            :class="`opacity-${imgOpacity[1]}`"
+                            class="
+                              transition-opacity
+                              ease-in
+                              duration-500
+                              w-full
+                              h-full
+                              object-center object-cover
+                            "
                           />
                         </div>
                         <div class="w-44 h-64 rounded-lg overflow-hidden">
                           <img
                             :src="getImage(`memory/${photos[1]}`)"
                             alt=""
-                            class="w-full h-full object-center object-cover"
+                            :class="`opacity-${imgOpacity[2]}`"
+                            class="
+                              transition-opacity
+                              ease-in
+                              duration-500
+                              w-full
+                              h-full
+                              object-center object-cover
+                            "
                           />
                         </div>
                       </div>
@@ -186,7 +229,15 @@ const closeItemView = () => {
                           <img
                             :src="getImage(`memory/${photos[2]}`)"
                             alt=""
-                            class="w-full h-full object-center object-cover"
+                            :class="`opacity-${imgOpacity[0]}`"
+                            class="
+                              transition-opacity
+                              ease-in
+                              duration-500
+                              w-full
+                              h-full
+                              object-center object-cover
+                            "
                           />
                         </div>
                         <div class="w-44 h-64 rounded-lg overflow-hidden">
@@ -200,7 +251,15 @@ const closeItemView = () => {
                           <img
                             :src="getImage(`memory/${photos[3]}`)"
                             alt=""
-                            class="w-full h-full object-center object-cover"
+                            :class="`opacity-${imgOpacity[3]}`"
+                            class="
+                              transition-opacity
+                              ease-in
+                              duration-500
+                              w-full
+                              h-full
+                              object-center object-cover
+                            "
                           />
                         </div>
                       </div>
@@ -216,14 +275,30 @@ const closeItemView = () => {
                           <img
                             :src="getImage(`memory/${photos[4]}`)"
                             alt=""
-                            class="w-full h-full object-center object-cover"
+                            :class="`opacity-${imgOpacity[5]}`"
+                            class="
+                              transition-opacity
+                              ease-in
+                              duration-500
+                              w-full
+                              h-full
+                              object-center object-cover
+                            "
                           />
                         </div>
                         <div class="w-44 h-64 rounded-lg overflow-hidden">
                           <img
                             :src="getImage(`memory/${photos[5]}`)"
                             alt=""
-                            class="w-full h-full object-center object-cover"
+                            :class="`opacity-${imgOpacity[4]}`"
+                            class="
+                              transition-opacity
+                              ease-in
+                              duration-500
+                              w-full
+                              h-full
+                              object-center object-cover
+                            "
                           />
                         </div>
                       </div>
@@ -237,7 +312,10 @@ const closeItemView = () => {
       </div>
     </div>
     <div class="h-screen relative z-10 snap-start"></div>
-    <div class="relative z-10 snap-start overflow-hidden min-h-screen bg-white">
+    <div
+      ref="mainContent"
+      class="relative z-10 snap-start overflow-hidden min-h-screen bg-white"
+    >
       <div
         v-if="selectedItem"
         class="
@@ -452,15 +530,7 @@ const closeItemView = () => {
           <div class="pb-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div
-                class="
-                  max-w-2xl
-                  mx-auto
-                  pt-8
-                  sm:pt-12
-                  lg:pt-16
-                  pb-4
-                  lg:max-w-none
-                "
+                class="max-w-2xl mx-auto pt-6 sm:pt-12 lg:pt-16 lg:max-w-none"
               >
                 <div
                   class="
