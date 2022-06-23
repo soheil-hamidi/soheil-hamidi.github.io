@@ -53,8 +53,6 @@ const animationOpacity = ref(true);
 const itemViewAnimation = ref(true);
 const imgOpacity = ref([0, 0, 0, 0, 0, 0]);
 const selectedItem = ref<Section>();
-const mainContent = ref<HTMLInputElement>();
-const isMainContentOnTop = ref(false);
 
 const getSectionData = () => {
   const sectionData: Section[] = sections[selectedSection.value].section;
@@ -101,18 +99,6 @@ const changeImgOpacity = () => {
   }
 };
 changeImgOpacity();
-
-const trackMainContentLocation = () => {
-  const mainContentValue = mainContent.value;
-  if (mainContentValue) {
-    let loc = mainContentValue.getBoundingClientRect().top;
-    if (loc === 0) {
-      isMainContentOnTop.value = true;
-    } else if (loc > 0) {
-      isMainContentOnTop.value = false;
-    }
-  }
-};
 </script>
 
 <template>
@@ -124,7 +110,6 @@ const trackMainContentLocation = () => {
       overflow-y-scroll
       snap snap-y snap-mandatory
     "
-    @scroll="trackMainContentLocation"
   >
     <div class="h-screen w-screen fixed z-0">
       <div class="relative bg-white overflow-hidden h-screen">
@@ -178,42 +163,39 @@ const trackMainContentLocation = () => {
                         "
                       >
                         <div
+                          :class="`opacity-${imgOpacity[1]}`"
                           class="
+                            transition-opacity
+                            ease-in
+                            duration-500
                             w-44
                             h-64
                             rounded-lg
                             overflow-hidden
-                            sm:opacity-0
-                            lg:opacity-100
                           "
                         >
                           <img
                             :src="getImage(`memory/${photos[0]}`)"
                             alt=""
-                            :class="`opacity-${imgOpacity[1]}`"
-                            class="
-                              transition-opacity
-                              ease-in
-                              duration-500
-                              w-full
-                              h-full
-                              object-center object-cover
-                            "
+                            class="w-full h-full object-center object-cover"
                           />
                         </div>
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                        <div
+                          :class="`opacity-${imgOpacity[2]}`"
+                          class="
+                            transition-opacity
+                            ease-in
+                            duration-500
+                            w-44
+                            h-64
+                            rounded-lg
+                            overflow-hidden
+                          "
+                        >
                           <img
                             :src="getImage(`memory/${photos[1]}`)"
                             alt=""
-                            :class="`opacity-${imgOpacity[2]}`"
-                            class="
-                              transition-opacity
-                              ease-in
-                              duration-500
-                              w-full
-                              h-full
-                              object-center object-cover
-                            "
+                            class="w-full h-full object-center object-cover"
                           />
                         </div>
                       </div>
@@ -225,19 +207,22 @@ const trackMainContentLocation = () => {
                           lg:gap-y-8
                         "
                       >
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                        <div
+                          :class="`opacity-${imgOpacity[0]}`"
+                          class="
+                            transition-opacity
+                            ease-in
+                            duration-500
+                            w-44
+                            h-64
+                            rounded-lg
+                            overflow-hidden
+                          "
+                        >
                           <img
                             :src="getImage(`memory/${photos[2]}`)"
                             alt=""
-                            :class="`opacity-${imgOpacity[0]}`"
-                            class="
-                              transition-opacity
-                              ease-in
-                              duration-500
-                              w-full
-                              h-full
-                              object-center object-cover
-                            "
+                            class="w-full h-full object-center object-cover"
                           />
                         </div>
                         <div class="w-44 h-64 rounded-lg overflow-hidden">
@@ -247,19 +232,22 @@ const trackMainContentLocation = () => {
                             class="w-full h-full object-center object-cover"
                           />
                         </div>
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                        <div
+                          :class="`opacity-${imgOpacity[3]}`"
+                          class="
+                            transition-opacity
+                            ease-in
+                            duration-500
+                            w-44
+                            h-64
+                            rounded-lg
+                            overflow-hidden
+                          "
+                        >
                           <img
                             :src="getImage(`memory/${photos[3]}`)"
                             alt=""
-                            :class="`opacity-${imgOpacity[3]}`"
-                            class="
-                              transition-opacity
-                              ease-in
-                              duration-500
-                              w-full
-                              h-full
-                              object-center object-cover
-                            "
+                            class="w-full h-full object-center object-cover"
                           />
                         </div>
                       </div>
@@ -271,34 +259,40 @@ const trackMainContentLocation = () => {
                           lg:gap-y-8
                         "
                       >
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                        <div
+                          :class="`opacity-${imgOpacity[5]}`"
+                          class="
+                            transition-opacity
+                            ease-in
+                            duration-500
+                            w-44
+                            h-64
+                            rounded-lg
+                            overflow-hidden
+                          "
+                        >
                           <img
                             :src="getImage(`memory/${photos[4]}`)"
                             alt=""
-                            :class="`opacity-${imgOpacity[5]}`"
-                            class="
-                              transition-opacity
-                              ease-in
-                              duration-500
-                              w-full
-                              h-full
-                              object-center object-cover
-                            "
+                            class="w-full h-full object-center object-cover"
                           />
                         </div>
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                        <div
+                          :class="`opacity-${imgOpacity[4]}`"
+                          class="
+                            transition-opacity
+                            ease-in
+                            duration-500
+                            w-44
+                            h-64
+                            rounded-lg
+                            overflow-hidden
+                          "
+                        >
                           <img
                             :src="getImage(`memory/${photos[5]}`)"
                             alt=""
-                            :class="`opacity-${imgOpacity[4]}`"
-                            class="
-                              transition-opacity
-                              ease-in
-                              duration-500
-                              w-full
-                              h-full
-                              object-center object-cover
-                            "
+                            class="w-full h-full object-center object-cover"
                           />
                         </div>
                       </div>
@@ -312,10 +306,7 @@ const trackMainContentLocation = () => {
       </div>
     </div>
     <div class="h-screen relative z-10 snap-start"></div>
-    <div
-      ref="mainContent"
-      class="relative z-10 snap-start overflow-hidden min-h-screen bg-white"
-    >
+    <div class="relative snap-start min-h-screen bg-white pt-6">
       <div
         v-if="selectedItem"
         class="
